@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity{
 
     Button[][] btn = new Button[3][3]; // Button Array
-    boolean p1_turn = true; // p1的回合
+    boolean p1_turn = true; // p1 的回合
     int round;  // 回合數
     int p1_point, p2_point; // 計分
     TextView p1, p2; // 分數的 TextView
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity{
             }
         }
 
+        // 重置遊戲
         Button reset = findViewById(R.id.btn_reset);
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity{
     private final Button.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // 已經選過的按鈕不做任何反應
             if (!((Button) v).getText().toString().equals("")) {
                 return;
             }
